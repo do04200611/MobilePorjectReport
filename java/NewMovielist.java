@@ -1,4 +1,4 @@
-package com.example.mobileproject;
+package com.sentila.mobileproject;
 
 import android.app.AlertDialog;
 import android.content.Context;
@@ -90,5 +90,4 @@ public class NewMovielist extends AppCompatActivity {
 
     }
 }
-
 

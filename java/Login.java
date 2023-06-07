@@ -1,4 +1,4 @@
-package com.example.mobileproject;
+package com.sentila.mobileproject;
 
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
