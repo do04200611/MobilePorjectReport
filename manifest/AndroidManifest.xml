@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.MobileProject"
+        tools:targetApi="31">
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".movielist" android:label="movielist 엑티비티"/>
+        <activity android:name=".NewMovielist" android:label="movielist 엑티비티"/>
+        <activity android:name=".Login" android:label="movielist 엑티비티"/>
+        <activity android:name=".MyInformation" android:label="다른 페이지 엑티비티"/>
+        <activity android:name=".MovieMap" android:label="영화 지도"/>
+        <meta-data android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyBkaPmGFAYzMmZ0vA3Eza5ePFXgM3-Bzpo">
+        </meta-data>
+    </application>
+
+</manifest>
+
