@@ -25,7 +25,7 @@
         <activity android:name=".MyInformation" android:label="다른 페이지 엑티비티"/>
         <activity android:name=".MovieMap" android:label="영화 지도"/>
         <meta-data android:name="com.google.android.geo.API_KEY"
-            android:value="AIzaSyBkaPmGFAYzMmZ0vA3Eza5ePFXgM3-Bzpo">
+            android:value="AIzaSy**************za5ePFXgM3-Bzpo">
         </meta-data>
     </application>
 
