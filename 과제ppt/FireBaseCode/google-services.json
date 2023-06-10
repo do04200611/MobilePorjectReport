@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "395852632485",
+    "firebase_url": "https://nomadic-basis-388304-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "nomadic-basis-388304",
+    "storage_bucket": "nomadic-basis-388304.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:395852632485:android:e17fa51d5ddd2c48e5184c",
+        "android_client_info": {
+          "package_name": "com.sentila.f"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "395852632485-j8okk16l2fu7ksdfj3jvnkf99lu9k31a.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.sentila.f",
+            "certificate_hash": "157098a40e66241bff56d4e4828227aa2c7d5de0"
+          }
+        },
+        {
+          "client_id": "395852632485-cdjvd6fb7sb718pcm9vul4bj5idpg4js.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC201nR99rpXQR9N8_fg0wc68Buz_SSj_8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "395852632485-cdjvd6fb7sb718pcm9vul4bj5idpg4js.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
