@@ -1,0 +1,13 @@
+package com.sentila.mobile;
+
+import androidx.room.Database;
+import androidx.room.RoomDatabase;
+
+/**
+ * AppDatabase 클래스는 Room 데이터베이스를 정의하는 추상 클래스입니다.
+ * TodoDao 인터페이스를 통해 데이터베이스 작업을 수행할 수 있습니다.
+ */
+@Database(entities = {Todo.class}, version = 1)
+public abstract class AppDatabase extends RoomDatabase {
+    public abstract TodoDao todoDao();
+}
