@@ -1,0 +1,84 @@
+package com.sentila.mobile;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.room.Room;
+import java.util.List;
+
+import android.annotation.SuppressLint;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.EditText;
+import android.widget.TextView;
+
+//MainDataBase 클래스는 AppCompatActivity를 상속하는 데이터베이스 액티비티입니다.
+public class MainDataBase extends AppCompatActivity {
+
+private EditText mTodoEditText;
+    private TextView mResultTextView;
+    private AppDatabase db;
+
+    @SuppressLint("MissingInflatedId")
+    @Override
+    //onCreate() 메서드는 액티비티가 생성될 때 호출되는 메서드로, 레이아웃 설정, 데이터베이스 초기화, 버튼 클릭 이벤트 등을 처리합니다.
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.bulletinboard);
+
+        // UI 요소 초기화
+        mTodoEditText = findViewById(R.id.todo_edit);
+        mResultTextView = findViewById(R.id.resultText);
+        
+////데이터베이스 초기화는 Room 라이브러리를 사용하여 수행됩니다. databaseBuilder() 메서드를 사용하여 데이터베이스 인스턴스를 생성하고, allowMainThreadQueries()를 호출하여 메인 스레드에서 쿼리를 허용합니다.
+"추가", "수정", "삭제", "초기화" 버튼 클릭 이벤트에서는 해당 동작을 수행하고 updateResultText() 메서드를 호출하여 결과 텍스트를 업데이트합니다.
+updateResultText() 메서드는 모든 Todo 항목을 가져와서 결과 텍스트를 업데이트합니다.
+
+        // Room 데이터베이스 인스턴스 생성
+        db = Room.databaseBuilder(this, AppDatabase.class, "todo-db")
+                .allowMainThreadQueries()
+                .build();
+
+        // "추가" 버튼 클릭 이벤트 처리
+        findViewById(R.id.add_button).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // EditText의 내용을 가져와서 데이터베이스에 새로운 Todo 항목 추가
+                db.todoDao().insert(new Todo(mTodoEditText.getText().toString()));
+                updateResultText();
+            }
+        });
+
+        // "수정" 버튼 클릭 이벤트 처리
+        findViewById(R.id.btnUpdate).setOnClickListener(view -> {
+            // 첫 번째 Todo 항목을 가져와서 EditText에 입력된 값으로 수정
+            Todo todo = db.todoDao().getAll().get(0);
+            todo.setTitle(mTodoEditText.getText().toString());
+            db.todoDao().update(todo);
+            updateResultText();
+        });
+
+        // "삭제" 버튼 클릭 이벤트 처리
+        findViewById(R.id.Delete_button).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // 첫 번째 Todo 항목을 가져와서 데이터베이스에서 삭제
+                Todo todo = db.todoDao().getAll().get(0);
+                db.todoDao().delete(todo);
+                updateResultText();
+            }
+        });
+
+        // "초기화" 버튼 클릭 이벤트 처리
+        findViewById(R.id.ResetButton).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // EditText 내용을 지움
+                mTodoEditText.setText("");
+            }
+        });
+
+        // 결과 텍스트 업데이트
+        updateResultText();
+    }
+
+    private void updateResultText() {
+        // 모든 Todo 항목을 가져와서 결과 텍스트 업데이트
