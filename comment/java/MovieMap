@@ -1,0 +1,98 @@
+package com.sentila.mobile;
+
+import android.os.Bundle;
+import androidx.appcompat.app.AppCompatActivity;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.view.SubMenu;
+
+import com.google.android.gms.maps.CameraUpdateFactory;
+import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.MapFragment;
+import com.google.android.gms.maps.OnMapReadyCallback;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
+import com.google.android.gms.maps.model.GroundOverlayOptions;
+import com.google.android.gms.maps.model.LatLng;
+
+//MovieMap 클래스는 AppCompatActivity를 상속하고, OnMapReadyCallback 인터페이스를 구현하는 지도 화면 액티비티입니다.
+public class MovieMap extends AppCompatActivity implements OnMapReadyCallback {
+    GoogleMap gMap;
+    MapFragment mapFrag;
+    GroundOverlayOptions videoMark;
+    
+//onCreate() 메서드는 액티비티가 생성될 때 호출되는 메서드로, 레이아웃 설정과 맵 초기화를 수행합니다.
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.moviemap);
+        setTitle("Google 지도 활용 (수정)");
+
+        // 맵 프래그먼트를 가져와서 OnMapReadyCallback을 등록합니다.
+        mapFrag = (MapFragment) getFragmentManager().findFragmentById(R.id.map);
+        mapFrag.getMapAsync(this);
+    }
+    
+//onMapReady() 메서드는 맵이 준비되면 호출되는 콜백 메서드로, 맵의 초기 설정 및 이벤트 리스너를 등록합니다.
+    @Override
+    public void onMapReady(GoogleMap map) {
+        gMap = map;
+        gMap.setMapType(GoogleMap.MAP_TYPE_SATELLITE);
+        gMap.moveCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(35.1634, 129.1638), 15));
+        gMap.getUiSettings().setZoomControlsEnabled(true);
+        gMap.setOnMapClickListener(new GoogleMap.OnMapClickListener() {
+            @Override
+            public void onMapClick(LatLng point) {
+                // 지도를 클릭할 때 지도 위에 이미지를 표시합니다.
+                videoMark = new GroundOverlayOptions().image(BitmapDescriptorFactory.fromResource(R.drawable.rate_star_small_on))
+                        .position(point, 100f, 100f);
+                gMap.addGroundOverlay(videoMark);
+            }
+        });
+    }
+    
+//onCreateOptionsMenu() 메서드는 옵션 메뉴를 생성하는 메서드입니다. 위성 지도, 일반 지도, 영화관 바로가기 등의 항목이 있습니다.
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        super.onCreateOptionsMenu(menu);
+        // 옵션 메뉴를 생성합니다.
+        menu.add(0, 1, 0, "위성 지도");
+        menu.add(0, 2, 0, "일반 지도");
+        SubMenu sMenu = menu.addSubMenu("영화관 바로가기 >>");
+        sMenu.add(0, 3, 0, "영화의 전당");
+        sMenu.add(0, 4, 0, "장산역 근처 영화관");
+        sMenu.add(0, 5, 0, "구서동 근처 영화관");
+        sMenu.add(0, 6, 0, "센텀시티 영화관");
+        sMenu.add(0, 7, 0, "해운대 영화관");
+        return true;
+    }
+
+//onOptionsItemSelected() 메서드는 옵션 메뉴 항목을 선택했을 때의 동작을 처리하는 메서드입니다. 선택한 항목에 따라 맵의 종류를 변경하거나 특정 위치로 이동합니다.
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // 옵션 메뉴 항목을 선택했을 때의 동작을 처리합니다.
+        switch (item.getItemId()) {
+            case 1:
+                gMap.setMapType(GoogleMap.MAP_TYPE_HYBRID);
+                return true;
+            case 2:
+                gMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
+                return true;
+            case 3:
+                gMap.moveCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(35.158680, 129.164482), 15));
+                return true;
+            case 4:
+                gMap.moveCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(35.227714, 129.157886), 15));
+                return true;
+            case 5:
+                gMap.moveCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(35.184106, 129.083682), 15));
+                return true;
+            case 6:
+                gMap.moveCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(35.168815, 129.130721), 15));
+                return true;
+            case 7:
+                gMap.moveCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(35.161201, 129.161148), 15));
+                return true;
+        }
+        return false;
+    }
+}
