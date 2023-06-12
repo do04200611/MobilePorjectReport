@@ -1,4 +1,4 @@
-package com.sentila.mobile;
+package com.example.mobileproject;
 
 import androidx.room.Database;
 import androidx.room.RoomDatabase;
