@@ -1,0 +1,22 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical" >
+
+    <!-- ImageView: 영화 포스터를 표시하는 이미지 뷰 -->
+    <ImageView
+        android:id="@+id/ivPoster"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <!-- TextView: "재미있는 영화에요"라는 텍스트를 표시하는 텍스트 뷰 -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="재미있는 영화에요">
+
+    </TextView>
+
+</LinearLayout>
