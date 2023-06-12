@@ -2,5 +2,9 @@
 
 최종 시행 영상입니다.
 
-https://github.com/do04200611/MobilePorjectReport/assets/74278578/c4c13030-2fbf-41d7-9f13-ffc47122e4c0
+
+
+
+https://github.com/do04200611/MobilePorjectReport/assets/74278578/0c99e440-9f62-4377-b64a-db78434d90ea
+
 
