@@ -1,0 +1,25 @@
+package com.sentila.mobile;
+
+import androidx.room.Dao;
+import androidx.room.Delete;
+import androidx.room.Insert;
+import androidx.room.Query;
+import androidx.room.Update;
+
+import java.util.List;
+
+@Dao
+public interface TodoDao {
+
+    @Query("SELECT * FROM Todo")
+    List<Todo> getAll(); // Todo를 조회하는 메서드
+
+    @Insert
+    void insert(Todo todo); //Todo를  추가하는 메서드
+
+    @Update
+    void update(Todo todo); //Todo를  업데이트하는 메서드
+
+    @Delete
+    void delete(Todo todo); // Todo를 삭제하는 메서드
+}
