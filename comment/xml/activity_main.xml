@@ -1,0 +1,48 @@
+
+
+<!--이 XML 레이아웃은 탭 호스트를 구성하는 뷰들을 정의하고 있습니다. TabSpec 등을 사용하여 탭을 추가하고 콘텐츠를 연결해야 합니다. -->
+
+<!--TabHost는 탭 기능을 제공하는 뷰 그룹입니다.-->
+<TabHost xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@android:id/tabhost"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <!-- activity_main.xml -->
+
+    <!-- RecyclerView -->
+    <!--RecyclerView는 목록을 표시하는 뷰입니다. @+id/recyclerView로 식별되며, match_parent로 설정된 너비와 높이를 갖습니다. -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <!--LinearLayout은 수직으로 정렬된 뷰 그룹입니다. @+id/linearLayout1로 식별되며, match_parent로 설정된 너비와 높이를 갖습니다. -->
+    <!-- LinearLayout -->
+    <LinearLayout
+        android:id="@+id/linearLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical" >
+        
+<!--
+FrameLayout은 탭 콘텐츠를 위한 컨테이너입니다. @android:id/tabcontent로 식별되며, match_parent로 설정된 너비와 높이를 갖고 layout_weight 속성이 1로 설정되어 있습니다. -->
+        <!-- FrameLayout for Tab content -->
+        <FrameLayout
+            android:id="@android:id/tabcontent"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1" >
+        </FrameLayout>
+<!--TabWidget은 탭을 표시하는 뷰입니다. @android:id/tabs로 식별되며, match_parent로 설정된 너비와 wrap_content로 설정된 높이를 갖습니다. background 속성은 #F0F000로 설정되어 있습니다.
+ -->
+        <!-- TabWidget -->
+        <TabWidget
+            android:id="@android:id/tabs"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#F0F000" >
+        </TabWidget>
+    </LinearLayout>
+
+</TabHost>
