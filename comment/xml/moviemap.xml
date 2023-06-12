@@ -1,0 +1,16 @@
+<!-- 맵 프래그먼트 -->
+<!-- 이 코드는 맵 프래그먼트를 나타냅니다. -->
+<!-- Google 지도를 표시하기 위해 MapFragment 클래스를 사용합니다. -->
+<fragment xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:map="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/map"
+    android:name="com.google.android.gms.maps.MapFragment"
+
+ <!-- 맵 프래그먼트는 레이아웃의 전체 너비와 높이를 차지하며, match_parent 속성을 사용하여 맞춤 설정됩니다. -->
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    map:cameraTargetLat="37.541"<!-- cameraTargetLat 속성은 카메라의 초기 위치를 설정하는 데 사용되며, 위도 값으로 37.541이 설정되었습니다. -->
+    map:cameraTargetLng="126.986"<!-- cameraTargetLng 속성은 카메라의 초기 위치를 설정하는 데 사용되며, 경도 값으로 126.986이 설정되었습니다. -->
+    map:cameraZoom="15" /><!-- cameraZoom 속성은 카메라의 초기 줌 레벨을 설정하는 데 사용되며, 15로 설정되었습니다. -->
