@@ -1,0 +1,30 @@
+  <!-- 그리드뷰 -->
+<!-- 그리드뷰는 항목을 그리드 형태로 표시하는 데 사용됩니다. -->
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+              
+  <!-- fill_parent 속성을 사용하여 레이아웃이 부모 요소에 맞게 확장되도록 설정되었습니다. -->
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+
+    android:orientation="horizontal" >  <!-- 레이아웃의 가로 방향으로 배치되도록 LinearLayout의 orientation 속성이 horizontal로 설정되었습니다. -->
+
+  
+    
+
+    <GridView
+        android:id="@+id/gridView1"
+      <!-- 그리드뷰의 너비는 0dp로 설정되고, layout_weight 속성을 사용하여 가중치를 1로 설정하였습니다. -->
+      <!-- 이는 그리드뷰가 LinearLayout 내에서 남은 공간을 동등하게 차지하도록 합니다. -->
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+  
+        <!-- 그리드뷰는 항목을 중앙에 정렬하기 위해 gravity 속성이 center로 설정되었습니다. -->
+        <!-- numColumns 속성은 그리드뷰의 열 수를 4로 설정하였습니다. -->
+        android:gravity="center"
+        android:numColumns="4" />   
+    
+    
+</LinearLayout>
