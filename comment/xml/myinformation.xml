@@ -1,0 +1,69 @@
+<!-- res/layout/activity_my_info.xml -->
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/baseLayout"
+    android:orientation="vertical">
+
+    <!-- 아이디 입력 필드 -->
+    <EditText
+        android:id="@+id/editid"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="아이디" />
+
+    <!-- 비밀번호 입력 필드 -->
+    <EditText
+        android:id="@+id/editpassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="비밀번호"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <!-- 비밀번호 재확인 입력 필드 -->
+    <EditText
+        android:id="@+id/editpasswordchecking"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="비밀번호 재확인"
+        android:minHeight="48dp" />
+
+    <!-- 이름 입력 필드 -->
+    <EditText
+        android:id="@+id/editName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="이름"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <!-- 이메일 입력 필드 -->
+    <EditText
+        android:id="@+id/editEmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="이메일"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <!-- 저장 버튼 -->
+    <Button
+        android:id="@+id/btnSave"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="저장" />
+
+    <!-- 이건 버튼 -->
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="이건 버튼" />
+
+    <!-- 결과 텍스트뷰 -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/result"></TextView>
+
+</LinearLayout>
