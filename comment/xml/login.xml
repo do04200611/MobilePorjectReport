@@ -1,68 +1,34 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="16dp">
 
-    <!-- EditText: 할일 입력 필드 -->
+    <!-- EditText: 이메일 입력 필드 -->
     <EditText
-        android:id="@+id/todo_edit"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="4dp"
-        android:layout_marginTop="33dp"
-        android:ems="10"
-        android:hint="할일"
-        android:inputType="textPersonName"
-        android:minHeight="48dp"
-        android:text="Name" />
-
-    <!-- LinearLayout: 버튼들을 담는 컨테이너 -->
-    <LinearLayout
+        android:id="@+id/editTextEmail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:orientation="horizontal">
+        android:hint="이메일"
+        android:minHeight="48dp" />
 
-        <!-- Add Button: 새로운 할일 아이템을 추가 -->
-        <Button
-            android:id="@+id/add_button"
-            android:layout_weight="1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="입력" />
+    <!-- EditText: 비밀번호 입력 필드 -->
+    <EditText
+        android:id="@+id/editTextPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="비밀번호"
+        android:inputType="textPassword"
+        tools:ignore="TouchTargetSizeCheck" />
 
-        <!-- Update Button: 기존 할일 아이템을 업데이트 -->
-        <Button
-            android:id="@+id/btnUpdate"
-            android:layout_weight="1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="수정" />
+    <!-- Button: 로그인 버튼 -->
+    <Button
+        android:id="@+id/buttonLogin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="로그인" />
 
-        <!-- Delete Button: 할일 아이템 삭제 -->
-        <Button
-            android:id="@+id/Delete_button"
-            android:layout_weight="1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="삭제" />
-
-        <!-- Reset Button: 입력 필드 초기화 -->
-        <Button
-            android:id="@+id/ResetButton"
-            android:layout_weight="1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="초기화" />
-    </LinearLayout>
-
-    <!-- TextView: 할일 아이템을 표시 -->
-    <TextView
-        android:id="@+id/resultText"
-        android:layout_width="342dp"
-        android:layout_height="294dp"
-        android:layout_marginStart="18dp"
-        android:layout_marginEnd="18dp"
-        android:text="TextView" />
 </LinearLayout>
