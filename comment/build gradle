@@ -1,0 +1,45 @@
+plugins {
+    id 'com.android.application' // Android 애플리케이션 플러그인 사용
+}
+
+android {
+    namespace 'com.sentila.mobile' // 애플리케이션의 네임스페이스 설정
+    compileSdk 33 // 컴파일에 사용할 SDK 버전 설정
+
+    defaultConfig {
+        applicationId "com.sentila.mobile" // 애플리케이션의 고유 식별자 설정
+        minSdk 24 // 지원하는 최소 Android SDK 버전 설정
+        targetSdk 33 // 애플리케이션을 타겟으로 하는 Android SDK 버전 설정
+        versionCode 1 // 애플리케이션의 버전 코드 설정
+        versionName "1.0" // 애플리케이션의 버전 이름 설정
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner" // 테스트 실행에 사용할 인스트루멘테이션 러너 설정
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false // 축소화 기능 사용 여부 설정
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro' // ProGuard 파일 설정
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8 // 소스 코드 호환성 설정
+        targetCompatibility JavaVersion.VERSION_1_8 // 타겟 호환성 설정
+    }
+}
+
+dependencies {
+
+    implementation 'androidx.appcompat:appcompat:1.6.1' // AndroidX AppCompat 라이브러리 의존성 설정
+    implementation 'com.google.android.material:material:1.9.0' // Material Design 라이브러리 의존성 설정
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4' // ConstraintLayout 라이브러리 의존성 설정
+    implementation 'com.google.android.gms:play-services-maps:18.1.0' // Google Maps 라이브러리 의존성 설정
+    implementation 'com.google.android.gms:play-services-location:21.0.1' // 위치 서비스 라이브러리 의존성 설정
+    implementation 'androidx.room:room-runtime:2.5.1' // Android Room 라이브러리 의존성 설정
+    testImplementation 'junit:junit:4.13.2' // JUnit 테스트 의존성 설정
+    androidTestImplementation 'androidx.test.ext:junit:1.1.5' // AndroidX JUnit 테스트 의존성 설정
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1' // Espresso 테스트 의존성 설정
+    annotationProcessor 'androidx.room:room-compiler:2.5.1' // Room 애노테이션 프로세서 의존성 설정
+
+}
