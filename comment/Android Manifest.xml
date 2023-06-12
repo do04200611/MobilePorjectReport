@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Android Manifest 파일 -->
+
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- 애플리케이션 정보 설정 -->
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Mobile"
+        tools:targetApi="31">
+
+        <!-- 메인 액티비티 설정 -->
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:label="@string/app_name">
+
+            <!-- 액티비티 실행을 위한 인텐트 필터 설정 -->
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- 정보 변경 액티비티 설정 -->
+        <activity android:name=".MyInformaiton" android:label="정보 변경"/>
+
+        <!-- 최신영화 액티비티 설정 -->
+        <activity android:name=".NewMovielist" android:label="최신영화"/>
+
+        <!-- 로그인 액티비티 설정 -->
+        <activity android:name=".Login" android:label="로그인 엑티비티"/>
+
+        <!-- 지도 액티비티 설정 -->
+        <activity android:name=".MovieMap" android:label="지도"/>
+
+        <!-- 데이터베이스 액티비티 설정 -->
+        <activity android:name=".MainDataBase" android:label="글쓰기"/>
+
+        <!-- 구글 지도 API 키 설정 -->
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="구글_지도_API_키_입력">
+        </meta-data>
+    </application>
+
+</manifest>
