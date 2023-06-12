@@ -2,5 +2,6 @@
 <H2>파이어베이스와 오픈 API 실행 결과를 정리한 사진 입니다.</H2>
 
 
-(https://github.com/do04200611/MobilePorjectReport/assets/74278578/eb48a54d-8746-4c71-944e-74c774e1a1b7)
-(https://github.com/do04200611/MobilePorjectReport/assets/74278578/d06b511f-4b74-4476-a635-d3b217164a1e)
+
+![파이어](https://github.com/do04200611/MobilePorjectReport/assets/74278578/837f1e42-295a-4f36-982f-41351e177dff)
+![파이어2](https://github.com/do04200611/MobilePorjectReport/assets/74278578/3fdedcfa-0365-4384-931f-280cfea15615)
