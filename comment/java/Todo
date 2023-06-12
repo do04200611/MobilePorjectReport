@@ -8,9 +8,9 @@ import androidx.room.PrimaryKey;
 public class Todo {
 
     @PrimaryKey(autoGenerate = true)
-    private int id; // 할 일의 고유 식별자
+    private int id; // 게시글 고유 식별자
 
-    private String title; // 할 일의 제목
+    private String title; //글게시글의 제목
 
     public Todo(String title) {
         this.title = title;
