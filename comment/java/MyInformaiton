@@ -1,0 +1,57 @@
+package com.sentila.mobile;
+import android.graphics.Color;
+import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.view.SubMenu;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.LinearLayout;
+import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
+//MyInformation 클래스는 AppCompatActivity를 상속하는 개인 정보 화면 액티비티입니다.
+public class MyInformaiton extends AppCompatActivity {
+
+    LinearLayout baseLayout;
+    Button button1;
+    //editName, editEmail, editid, editpassword, editpasswordchecking 변수는 각각 이름, 이메일, 아이디, 비밀번호, 비밀번호 확인을 입력받는 EditText 요소입니다.
+    
+    private EditText editName, editEmail, editid, editpassword, editpasswordchecking;
+    
+    //btnSave 버튼은 정보 저장 버튼으로, 클릭 이벤트 리스너를 설정하여 저장된 정보를 가져와서 출력합니다.
+//저장 버튼 클릭 시 Toast 메시지를 통해 저장된 정보를 출력합니다.
+
+    private Button btnSave;
+//onCreate() 메서드는 액티비티가 생성될 때 호출되는 메서드로, 레이아웃 설정과 버튼 클릭 이벤트 처리를 포함합니다.
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.myinformation);
+
+        // 레이아웃 요소들을 변수에 바인딩합니다.
+        editName = findViewById(R.id.editName);
+        editEmail = findViewById(R.id.editEmail);
+        editid = findViewById(R.id.editid);
+        editpassword = findViewById(R.id.editpassword);
+        editpasswordchecking = findViewById(R.id.editpasswordchecking);
+        btnSave = findViewById(R.id.btnSave);
+
+        baseLayout = findViewById(R.id.baseLayout);
+        button1 = findViewById(R.id.button1);
+
+        // 저장 버튼에 클릭 이벤트 리스너를 설정합니다.
+        btnSave.setOnClickListener(v -> {
+            // 입력된 정보를 가져옵니다.
+            String name = editName.getText().toString();
+            String email = editEmail.getText().toString();
+            String password = editpassword.getText().toString();
+            String passwordchecking = editpasswordchecking.getText().toString();
+            String id = editid.getText().toString();
+
+            // 정보 저장 로직을 추가해야 합니다.
+            // 여기서는 간단히 제목과 내용을 출력해보는 예시를 제시합니다.
+            Toast.makeText(MyInformaiton.this, "저장된 정보:\n아이디: " + id + "\n비밀번호: " + password + "\n재확인 비밀번호: " + passwordchecking + "\n이름: " + name + "\n이메일: " + email, Toast.LENGTH_SHORT).show();
+        });
+    }
+}
