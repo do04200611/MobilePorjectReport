@@ -1,0 +1,101 @@
+package com.sentila.mobile;
+
+import android.app.AlertDialog;
+import android.content.Context;
+import android.os.Bundle;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.BaseAdapter;
+import android.widget.GridView;
+import android.widget.ImageView;
+
+import androidx.appcompat.app.AppCompatActivity;
+//NewMovielist 클래스는 AppCompatActivity를 상속하는 영화 목록 액티비티입니다.
+public class NewMovielist extends AppCompatActivity {
+//onCreate() 메서드는 액티비티가 생성될 때 호출되는 메서드로, 레이아웃 설정과 그리드뷰에 어댑터를 설정하는 역할을 합니다.
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.newmovielist);
+        setTitle("최신 영화 목록");
+
+        final GridView gv = (GridView) findViewById(R.id.gridView1);
+        NewMovielist.MyGridAdapter gAdapter = new NewMovielist.MyGridAdapter(this);
+        gv.setAdapter(gAdapter);
+    }
+
+    public class MyGridAdapter extends BaseAdapter {
+        Context context;
+
+        public MyGridAdapter(Context c) {
+            context = c;
+        }
+        
+        //posterID 배열에는 각 포스터 이미지의 리소스 ID가 포함되어 있습니다.
+
+
+        Integer[] posterID = { R.drawable.mov01, R.drawable.mov02,
+                R.drawable.mov03, R.drawable.mov44, R.drawable.mov05,
+                R.drawable.mov06, R.drawable.mov82, R.drawable.mov18,
+                R.drawable.mov09, R.drawable.mov10, R.drawable.mov01,
+                R.drawable.mov02, R.drawable.mov03, R.drawable.mov14,
+                R.drawable.mov05, R.drawable.mov06, R.drawable.mov77,
+                R.drawable.mov08, R.drawable.mov09, R.drawable.mov40,
+                R.drawable.mov01, R.drawable.mov02, R.drawable.mov33,
+                R.drawable.mov04, R.drawable.mov05, R.drawable.mov66,
+                R.drawable.mov07, R.drawable.mov08, R.drawable.mov19,
+                R.drawable.mov10 };
+//getCount() 메서드는 그리드뷰에 표시할 아이템의 개수를 반환합니다.
+        public int getCount() {
+            return posterID.length;
+        }
+
+        public Object getItem(int position) {
+            return null;
+        }
+
+        public long getItemId(int position) {
+            return 0;
+        }
+        
+        //getView() 메서드는 각 그리드뷰 아이템을 구성하는 뷰를 반환합니다.
+        public View getView(int position, View convertView, ViewGroup parent) {
+            // 이미지뷰 생성
+            ImageView imageview = new ImageView(context);
+            // 이미지뷰 레이아웃 설정
+            imageview.setLayoutParams(new GridView.LayoutParams(200, 300));
+            // 이미지뷰 스케일 타입 설정
+            imageview.setScaleType(ImageView.ScaleType.FIT_CENTER);
+            // 이미지뷰 패딩 설정
+            imageview.setPadding(5, 5, 5, 5);
+
+            // 이미지뷰에 포스터 이미지 설정
+            imageview.setImageResource(posterID[position]);
+
+            final int pos = position;
+            // 이미지뷰 클릭 이벤트 설정
+            imageview.setOnClickListener(new View.OnClickListener() {
+                public void onClick(View v) {
+                    // 대화상자를 생성하고 영화 정보를 보여줌
+                    View dialogView = (View) View.inflate(
+                            NewMovielist.this, R.layout.movieinformation, null);
+                    AlertDialog.Builder dlg = new AlertDialog.Builder(
+                            NewMovielist.this);
+                    ImageView ivPoster = (ImageView) dialogView
+                            .findViewById(R.id.ivPoster);
+                    // 대화상자에 클릭한 포스터 이미지 설정
+                    ivPoster.setImageResource(posterID[pos]);
+                    dlg.setTitle("큰 포스터");
+                    dlg.setIcon(R.drawable.ic_launcher);
+                    dlg.setView(dialogView);
+                    dlg.setNegativeButton("닫기", null);
+                    dlg.show();
+                }
+            });
+
+
+
+            return imageview;
+        }
+    }
+}
