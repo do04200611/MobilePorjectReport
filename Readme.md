@@ -8,4 +8,3 @@
 https://github.com/do04200611/MobilePorjectReport/assets/74278578/0c99e440-9f62-4377-b64a-db78434d90ea
 
 
-[Uploading 안드로이드 프로젝트 발표.pptx…]()
