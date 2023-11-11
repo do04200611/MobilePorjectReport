@@ -1,7 +1,7 @@
 ![ANDROID](https://img.shields.io/badge/Android-3DDC84?style=flat-square&logo=android&logoColor=white)
 ![JAVA](https://img.shields.io/badge/java-007396?style=flat-square&logo=java&logoColor=white)
 <H1>모바일 프로젝트 및 수업 때 내주신 과제 PPT 파일이 모여있는 레파지토리입니다.</H1>
-![graph](https://github-readme-stats.vercel.app/api/top-langs/?username=do04200611&layout=compact) <br>
+![graph](https://github-readme-stats.vercel.app/api/top-langs/?username=do04200611&layout=compact)<br>
 최종 시행 영상입니다.
 
 
